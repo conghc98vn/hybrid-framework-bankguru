@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite parallel="none" name="BankGuru99 Automation E2E" thread-count="4">
+    <listeners>
+        <!--        <listener class-name="reportConfig.AllureTestListener"/>>-->
+        <listener class-name="commons.MethodListener"/>
+        <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+        <listener class-name="reportConfig.ReportNGListener"/>
+    </listeners>
+
+    <parameter name="env" value="SIT"/>
+    <parameter name="customerInfoJson" value="customerInfoData.json"/>
+
+    <test name="Run on Chrome" preserve-order="true">
+        <parameter name="browser" value="Chrome"/>
+        <classes>
+<!--            <class name="com."/>-->
+        </classes>
+    </test>
+</suite>
