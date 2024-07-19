@@ -4,6 +4,10 @@ public class AccountInfo {
     private String usernameID;
     private String password;
 
+    public static AccountInfo getAccountInfo() {
+        return new AccountInfo();
+    }
+
     public String getUsernameID() {
         return usernameID;
     }

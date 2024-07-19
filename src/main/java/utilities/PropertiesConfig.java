@@ -33,19 +33,19 @@ public class PropertiesConfig {
         return new PropertiesConfig(serverName);
     }
 
-    public String getUrl() {
-        String url = properties.getProperty("App.Url");
+    public String getUrlRegister() {
+        String url = properties.getProperty("App.UrlRegister");
         if (url != null)
             return url;
         else
             throw new RuntimeException("Url not specified in the properties file.");
     }
 
-    public String getPasswordBO() {
-        String password = properties.getProperty("Password.BO");
-        if (password != null)
-            return password;
+    public String getUrlLogin() {
+        String url = properties.getProperty("App.UrlLogin");
+        if (url != null)
+            return url;
         else
-            throw new RuntimeException("Password not specified in the properties file.");
+            throw new RuntimeException("Url not specified in the properties file.");
     }
 }

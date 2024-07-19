@@ -1,5 +1,11 @@
 {
-  "phoneNumber": "0969910198",
-  "idNumber": "001098034158",
-  "accountNumber": "880010398"
+  "customerName": "Bank Guru",
+  "dateOfBirth": "20/10/1998",
+  "address": "In the world",
+  "city": "Earth",
+  "state": "Mar",
+  "pin": "111111",
+  "mobileNumber": "0123456789",
+  "email": "bankguru@gmail.com",
+  "password": "12345Aaa"
 }

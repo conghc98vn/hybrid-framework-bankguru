@@ -9,13 +9,13 @@
         <listener class-name="reportConfig.ReportNGListener"/>
     </listeners>
 
-    <parameter name="env" value="SIT"/>
+    <parameter name="env" value="dev"/>
     <parameter name="customerInfoJson" value="customerInfoData.json"/>
 
     <test name="Run on Chrome" preserve-order="true">
         <parameter name="browser" value="Chrome"/>
         <classes>
-<!--            <class name="com."/>-->
+            <class name="com.bankguru.login.Login_01_Verify_Login"/>
         </classes>
     </test>
 </suite>

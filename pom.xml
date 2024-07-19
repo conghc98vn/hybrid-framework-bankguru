@@ -158,7 +158,7 @@
                 <configuration>
                     <!-- Run TestNG xml file -->
                     <suiteXmlFiles>
-                        <suiteXmlFile>src/test/resources/runVikkiOn${environment}.xml</suiteXmlFile>
+                        <suiteXmlFile>src/test/resources/runBankGuruOn${environment}.xml</suiteXmlFile>
                     </suiteXmlFiles>
                     <!-- Argument -->
                     <argLine>

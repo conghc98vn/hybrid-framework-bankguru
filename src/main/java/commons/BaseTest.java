@@ -176,4 +176,9 @@ public class BaseTest {
             }
         }
     }
+
+    protected String getEmailAddress(String emailValue) {
+        Random rand = new Random();
+        return emailValue + rand.nextInt(9999) + "@gmail.com";
+    }
 }
