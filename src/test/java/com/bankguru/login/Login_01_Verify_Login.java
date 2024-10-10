@@ -20,7 +20,7 @@ public class Login_01_Verify_Login extends BaseTest {
 
     @Parameters({"browser", "env"})
     @BeforeClass
-    public void beforeClass(String browserName, String envName){
+    public void beforeClass(String browserName, String envName) {
         accountInfo = AccountInfo.getAccountInfo();
         propertiesConfig = PropertiesConfig.getProperties(envName);
         driver = getBrowserDriver(browserName, propertiesConfig.getUrlRegister());
@@ -33,43 +33,47 @@ public class Login_01_Verify_Login extends BaseTest {
     }
 
     @Test
-    public void Login_01_Username_Is_Blank(){
+    public void Login_01_Username_Is_Blank() {
         loginPage.enterToUsernameIDTextbox("");
         loginPage.enterToPasswordTextbox(accountInfo.getPassword());
         loginPage.clickToLoginButton();
+        loginPage.acceptToAlert(driver);
     }
 
     @Test
-    public void Login_02_User_Is_Inconrrect(){
-        loginPage.enterToUsernameIDTextbox("user_inconrrect");
+    public void Login_02_User_Is_Incorrect() {
+        loginPage.enterToUsernameIDTextbox("user_incorrect");
         loginPage.enterToPasswordTextbox(accountInfo.getPassword());
         loginPage.clickToLoginButton();
+        loginPage.acceptToAlert(driver);
     }
 
     @Test
-    public void Login_03_Password_Is_Bank(){
+    public void Login_03_Password_Is_Bank() {
         loginPage.enterToUsernameIDTextbox(accountInfo.getUsernameID());
         loginPage.enterToPasswordTextbox("");
         loginPage.clickToLoginButton();
-
+        loginPage.acceptToAlert(driver);
     }
+
     @Test
-    public void Login_04_Password_Is_Inconrrect(){
+    public void Login_04_Password_Is_Incorrect() {
         loginPage.enterToUsernameIDTextbox(accountInfo.getUsernameID());
-        loginPage.enterToPasswordTextbox("password_inconrrect");
+        loginPage.enterToPasswordTextbox("password_incorrect");
         loginPage.clickToLoginButton();
-
+        loginPage.acceptToAlert(driver);
     }
 
     @Test
-    public void Login_05_Reset_Username_And_Password(){
+    public void Login_05_Reset_Username_And_Password() {
         loginPage.enterToUsernameIDTextbox(accountInfo.getUsernameID());
         loginPage.enterToPasswordTextbox(accountInfo.getPassword());
         loginPage.clickToResetButton();
+        loginPage.acceptToAlert(driver);
     }
 
     @Test
-    public void Login_06_Login_Success(){
+    public void Login_06_Login_Success() {
         loginPage.enterToUsernameIDTextbox(accountInfo.getUsernameID());
         loginPage.enterToPasswordTextbox(accountInfo.getPassword());
         loginPage.clickToLoginButton();

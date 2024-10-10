@@ -4,7 +4,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
@@ -14,16 +13,16 @@ import org.testng.annotations.BeforeSuite;
 import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
-import java.util.Collections;
-import java.util.Map;
 import java.util.Random;
 
 public class BaseTest {
     protected final Logger log;
     private WebDriver driver;
+
     public BaseTest() {
         log = LogManager.getLogger(getClass());
     }
+
     public WebDriver getDriver() {
         return driver;
     }
@@ -33,13 +32,7 @@ public class BaseTest {
 
         switch (browserList) {
             case CHROME:
-                ChromeOptions options = new ChromeOptions();
-                options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
-                options.setExperimentalOption("useAutomationExtension", false);
-                options.setExperimentalOption("prefs",
-                        Map.of("credentials_enable_service", false,
-                                "profile.password_manager_enabled", false));
-                driver = new ChromeDriver(options);
+                driver = new ChromeDriver();
                 break;
             case FIREFOX:
                 driver = new FirefoxDriver();

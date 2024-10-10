@@ -8,19 +8,19 @@ import pageUIs.LoginPageUI;
 public class LoginPageObject extends BaseElement {
     WebDriver driver;
 
-    public LoginPageObject(WebDriver driver){
+    public LoginPageObject(WebDriver driver) {
         super(driver);
         this.driver = driver;
     }
 
     public void enterToUsernameIDTextbox(String usernameValue) {
         waitForElementVisible(driver, LoginPageUI.USERID_TEXTBOX);
-        sendkeyToElement(driver, LoginPageUI.USERID_TEXTBOX, usernameValue);
+        sendKeyToElement(driver, LoginPageUI.USERID_TEXTBOX, usernameValue);
     }
 
     public void enterToPasswordTextbox(String passwordValue) {
         waitForElementVisible(driver, LoginPageUI.PASSWORD_TEXTBOX);
-        sendkeyToElement(driver, LoginPageUI.PASSWORD_TEXTBOX, passwordValue);
+        sendKeyToElement(driver, LoginPageUI.PASSWORD_TEXTBOX, passwordValue);
     }
 
     public void clickToLoginButton() {

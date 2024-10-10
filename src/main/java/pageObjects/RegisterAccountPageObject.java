@@ -1,7 +1,5 @@
 package pageObjects;
 
-import commons.BasePage;
-import commons.BaseTest;
 import dataConfig.AccountInfo;
 import org.openqa.selenium.WebDriver;
 import pageUIs.RegisterAccountPageUI;
@@ -9,14 +7,14 @@ import pageUIs.RegisterAccountPageUI;
 public class RegisterAccountPageObject extends BaseElement {
     WebDriver driver;
 
-    public RegisterAccountPageObject(WebDriver driver){
+    public RegisterAccountPageObject(WebDriver driver) {
         super(driver);
         this.driver = driver;
     }
 
     public void enterToEmailIDTextbox(String emailValue) {
         waitForElementVisible(driver, RegisterAccountPageUI.EMAIL_ID_TEXTBOX);
-        sendkeyToElement(driver, RegisterAccountPageUI.EMAIL_ID_TEXTBOX, emailValue);
+        sendKeyToElement(driver, RegisterAccountPageUI.EMAIL_ID_TEXTBOX, emailValue);
     }
 
     public void clickToSubmitButton() {
@@ -34,7 +32,7 @@ public class RegisterAccountPageObject extends BaseElement {
         return getElementText(driver, RegisterAccountPageUI.PASSWORD_LABEL);
     }
 
-    public void registerAndGetAccount(String emailValue, AccountInfo accountInfo){
+    public void registerAndGetAccount(String emailValue, AccountInfo accountInfo) {
         enterToEmailIDTextbox(emailValue);
         clickToSubmitButton();
         accountInfo.setUsernameID(getUsernameIDText());

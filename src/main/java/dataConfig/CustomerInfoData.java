@@ -3,7 +3,6 @@ package dataConfig;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import commons.BasePage;
 import commons.GlobalConstants;
 
 import java.io.File;
